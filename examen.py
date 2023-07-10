@@ -1,5 +1,5 @@
 # -*-coding: utf-8 -*-
-ffrom flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
 from passlib.hash import sha256_crypt
 import sqlite3
 
