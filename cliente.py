@@ -1,7 +1,6 @@
 from ncclient import manager
 from jinja2 import Template
 
-Configuración de conexión SSH a CSR1000v
 device = {
     'host': '10.0.2.15',
     'port': 22,
