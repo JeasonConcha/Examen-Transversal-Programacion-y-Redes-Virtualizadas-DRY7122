@@ -9,7 +9,7 @@ cisco1 = {
     "password":"cisco123!"
 }
 # show command that we execute.
-command = "show run"
+command = "show version"
 with connecthandler(**cisco1) as net_connect:
     output = net_connect.send_command(command)
     #autmaticallly cleans up the output so that show output is returned
