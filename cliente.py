@@ -5,8 +5,8 @@ Configuración de conexión SSH a CSR1000v
 device = {
     'host': '10.0.2.15',
     'port': 22,
-    'username': 'cisco',
-    'password': 'cisco',
+    'username': 'DaimondzCid',
+    'password': '31886d291c4066ff1e4eeb8288f2947fa67fa8349fcf72ecd9af0c1af04c87a5',
     'device_params': {'name': 'csr'}
 }
 
