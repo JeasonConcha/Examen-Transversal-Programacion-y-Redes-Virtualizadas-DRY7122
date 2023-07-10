@@ -117,9 +117,9 @@ if __name__ == '__main__':
     crear_base_datos()
 
     # Almacenar usuarios y contraseñas en hash
-    almacenar_usuario_contrasena('Usuario1', 'Contraseña1')
-    almacenar_usuario_contrasena('Usuario2', 'Contraseña2')
-    almacenar_usuario_contrasena('Usuario3', 'Contraseña3')
+    almacenar_usuario_contrasena('  JeasonConcha', 'Contraseña1')
+    almacenar_usuario_contrasena('DaimondzCid', 'Contraseña2')
+    almacenar_usuario_contrasena('DiegoHernandez', 'Contraseña3')
 
     # Crear el sitio web en el puerto 9500
     server_address = ('', 9500)
