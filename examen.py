@@ -5,7 +5,7 @@ import sqlite3
 
 @app.route('/register' , methods=['POST'])
 def register_user ():
-data = request.get_json()
+data = requests.get_json()
 username = data ['username']
 password = data['password']
 
