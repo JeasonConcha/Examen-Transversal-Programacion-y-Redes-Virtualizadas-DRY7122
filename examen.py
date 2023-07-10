@@ -1,3 +1,4 @@
+# -*-coding: utf-8 -*-
 from flask import Flask, request, jsonify
 from passlib.hash import sha256_crypt
 import sqlite3
