@@ -23,7 +23,6 @@ def cambiar_nombre_router(nuevo_nombre):
         response = conn.edit_config(target='running', config=xml_payload)
         print(response)
 
-Crear la interfaz loopback 1 con la dirección IPv4 1.1.1.1/32
 def crear_loopback_interface():
     # Cargar el archivo de plantilla para crear la interfaz loopback
     with open('loopback_interface_template.xml') as f:
@@ -38,11 +37,9 @@ def crear_loopback_interface():
         response = conn.edit_config(target='running', config=xml_payload)
         print(response)
 
-Ejecutar las funciones para cambiar el nombre del router y crear la interfaz loopback
 def configurar_router():
     nuevo_nombre = "Concha Cid Hernandez"  # Reemplaza con los apellidos de los integrantes
     cambiar_nombre_router(nuevo_nombre)
     crear_loopback_interface()
 
-Ejecutar la función de configuración del router
 configurar_router()
