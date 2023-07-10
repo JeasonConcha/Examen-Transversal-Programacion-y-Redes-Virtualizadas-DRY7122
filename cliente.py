@@ -3,7 +3,7 @@ from jinja2 import Template
 
 Configuración de conexión SSH a CSR1000v
 device = {
-    'host': '192.168.56.102',
+    'host': '10.0.2.15',
     'port': 22,
     'username': 'cisco',
     'password': 'cisco',
