@@ -23,5 +23,5 @@ combustible_litros = distancia_km * 0.15
 print("Duracion del viaje: {} horas, {} minutos, {} segundos" .format(int(tiempo_horas), int(tiempo_minutos), int(tiempo,segundos)))
 print("Combustible requerido: litros" .format(round(combustible_litros, 1)))
 
-print("¡Estas a punto de viajar desde {} a {}!" .format(cuidad_origen, ciudad_destino))
-print("El viaje tiene una distancia de {} km y tomara aproximadamente {} horas." .format(round(distancia_km, 1) int(tiempo_horas)))
+print("¡Estas a punto de viajar desde {} a {}!" .format(ciudad_origen, ciudad_destino))
+print("El viaje tiene una distancia de {} km y tomara aproximadamente {} horas.".format(round(distancia_km, 1), int(tiempo_horas)))
