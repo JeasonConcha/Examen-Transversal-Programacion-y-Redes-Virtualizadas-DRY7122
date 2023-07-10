@@ -1,28 +1,32 @@
-import requests
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
 
-def calcular_distancia(ciudad_origen, ciudad_destino, api_key):
-    url = "https://maps.googleapis.com/maps/api/distancematrix/json"
-    params = {
-        "origins": ciudad_origen,
-        "destinations": ciudad_destino,
-        "key": api_key
-    }
-    response = requests.get(url, params=params)
-    data = response.json()
-    distancia_texto = data['rows'][0]['elements'][0]['distance']['text']
-    distancia_km = float(distancia_texto.split(" ")[0].replace(",", ""))
+Función para obtener las coordenadas geográficas de una ciudad
+def obtener_coordenadas(ciudad):
+    geolocator = Nominatim(user_agent="my_app")
+    location = geolocator.geocode(ciudad)
+    if location:
+        return location.latitude, location.longitude
+    else:
+        return None
 
-    return distancia_km
+Función para calcular la distancia entre dos ciudades
+def calcular_distancia(ciudad_origen, ciudad_destino):
+    coordenadas_origen = obtener_coordenadas(ciudad_origen)
+    coordenadas_destino = obtener_coordenadas(ciudad_destino)
 
-# Solicitar las ciudades de origen y destino en español
-ciudad_origen = input("Ciudad de Origen: ")
-ciudad_destino = input("Ciudad de Destino: ")
+    if coordenadas_origen and coordenadas_destino:
+        distancia = geodesic(coordenadas_origen, coordenadas_destino).kilometers
+        return distancia
+    else:
+        return None
 
-# Obtener la clave de API de Google Maps
-api_key = input("Clave de API de Google Maps: ")
+Ejemplo de uso
+ciudad_origen = "Santiago, Chile"
+ciudad_destino = "Buenos Aires, Argentina"
 
-# Calcular distancia en kilómetros utilizando la API de Google Maps
-distancia_km = calcular_distancia(ciudad_origen, ciudad_destino, api_key)
-
-# Imprimir el resultado
-print("Distancia:", round(distancia_km, 1), "kms")
+distancia_km = calcular_distancia(ciudad_origen, ciudad_destino)
+if distancia_km:
+    print(f"La distancia entre {ciudad_origen} y {ciudad_destino} es de {distancia_km:.1f} km.")
+else:
+    print("No se pudo calcular la distancia.")
