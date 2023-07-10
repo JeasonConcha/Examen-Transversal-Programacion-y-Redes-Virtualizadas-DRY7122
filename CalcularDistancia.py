@@ -1,7 +1,6 @@
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 
-Función para obtener las coordenadas geográficas de una ciudad
 def obtener_coordenadas(ciudad):
     geolocator = Nominatim(user_agent="my_app")
     location = geolocator.geocode(ciudad)
@@ -10,7 +9,6 @@ def obtener_coordenadas(ciudad):
     else:
         return None
 
-Función para calcular la distancia entre dos ciudades
 def calcular_distancia(ciudad_origen, ciudad_destino):
     coordenadas_origen = obtener_coordenadas(ciudad_origen)
     coordenadas_destino = obtener_coordenadas(ciudad_destino)
