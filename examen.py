@@ -50,13 +50,3 @@ if name == 'main':
         cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)")
         conn.commit()
     app.run(host='0.0.0.0', port=9500)
-
-@app.errorhandler(404)
-def page_not_found(e):
-return "Pagina no encontrada". 404
-if __name__ == '__main__':
-with sqlite3.connect(ET.db') as coon:
-cursor = conn.cursor()
-cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT,)
-conn.commit()
-app.run(host='0.0.0.0', port=9500)
