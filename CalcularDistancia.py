@@ -2,7 +2,7 @@ import requests
 from geopy.geocoders import nominatim
 from geopy import distance
 
-def obtener_distancia(cuidad_origen cuidad_destino):
+def obtener_distancia(cuidad_origen, cuidad_destino):
 	geolocator = Nominatim(user_agent="app")
 	location_origen = geolocator.geocode(ciudad_origen)
 	location_destino= geolocator.geocode(ciudad_destino)
