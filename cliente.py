@@ -9,7 +9,6 @@ device = {
     'device_params': {'name': 'csr'}
 }
 
-Cambiar el nombre del router utilizando ncclient y NETCONF
 def cambiar_nombre_router(nuevo_nombre):
     # Cargar el archivo de plantilla para cambiar el nombre
     with open('nombre_router_template.xml') as f:
